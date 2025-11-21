@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts for the luxury aesthetic:
+  - Playfair Display (Serif, Headings)
+  - Inter (Sans-serif, Body)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&display=swap');
+
+@layer base {
+  :root {
+    /* Base HSL values for the Cognac/Brass Luxury Palette */
+    --cognac: 24 60% 30%;   /* Deep Cognac Brown */
+    --brass: 36 78% 58%;    /* Rich Gold/Brass Accent */
+    --cream: 36 100% 98%;   /* Light Cream/Off-White */
+    --dark-bg: 210 10% 8%;  /* Deep Charcoal Background */
+
+    /* Light Mode */
+    --background: 0 0% 100%; /* White */
+    --foreground: 24 60% 10%; /* Very Dark Cognac */
+    --card: 0 0% 100%;
+    --card-foreground: 24 60% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 60% 10%;
+    --primary: var(--cognac);
+    --primary-foreground: 0 0% 100%; /* White text on Cognac */
+    --secondary: var(--brass);
+    --secondary-foreground: 24 60% 10%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 24 60% 40%;
+    --accent: 36 78% 90%;
+    --accent-foreground: 24 60% 10%;
+    --border: 24 60% 70%;
+    --input: 24 60% 80%;
+    --ring: var(--brass);
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    /* Dark Mode */
+    --background: var(--dark-bg); /* Deep Charcoal */
+    --foreground: var(--cream);
+    --card: 210 10% 10%;
+    --card-foreground: var(--cream);
+    --popover: 210 10% 10%;
+    --popover-foreground: var(--cream);
+    --primary: var(--brass);
+    --primary-foreground: var(--dark-bg); /* Dark text on Brass */
+    --secondary: var(--cognac);
+    --secondary-foreground: var(--cream);
+    --muted: 210 10% 15%;
+    --muted-foreground: 24 60% 70%;
+    --accent: 210 10% 20%;
+    --accent-foreground: var(--cream);
+    --border: 210 10% 30%;
+    --input: 210 10% 30%;
+    --ring: var(--cognac);
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  /* Apply Serif font to all headings for the luxury look */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}

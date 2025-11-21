@@ -74,7 +74,7 @@ export default function AboutPage() {
         />
       </div>
 
-      {/* FAQ Section Placeholder - Now imported correctly */}
+      {/* FAQ Section - Now imported correctly */}
       <FAQSection /> 
       
     </main>

@@ -1,7 +1,6 @@
 // app/artisan-story/page.tsx
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { allProductImageUrls } from '@/data/products';
 import { Separator } from '@/components/ui/separator';
 import EmbossedLogo from '@/components/Brand/EmbossedLogo';
 // Note: ArtisanStorySection is imported but not used directly here, 
@@ -41,7 +40,7 @@ export default function ArtisanStoryPage() {
           <div className='space-y-6'>
             <h3 className="text-4xl font-serif font-bold">The Meaning of RootHaus</h3>
             <p className="text-lg leading-relaxed text-foreground/90">
-              The name RootHaus—Root & Hide Co.—is a synthesis of global luxury and profound cultural significance. 'Root' honors the resilient Iroko tree, a symbol of strength and longevity in West Africa, representing our deep connection to heritage. 'Haus' speaks to the house of craft, where every hide is transformed into an heirloom. Our brand is built on the philosophy of **balance** and **justice**, mirroring the celestial alignment and the equilibrium of nature.
+              The name RootHaus—Root & Hide Co.—is a synthesis of global luxury and profound cultural significance. &apos;Root&apos; honors the resilient Iroko tree, a symbol of strength and longevity in West Africa, representing our deep connection to heritage. &apos;Haus&apos; speaks to the house of craft, where every hide is transformed into an heirloom. Our brand is built on the philosophy of **balance** and **justice**, mirroring the celestial alignment and the equilibrium of nature.
             </p>
           </div>
         </div>
@@ -56,7 +55,7 @@ export default function ArtisanStoryPage() {
               We exclusively use vegetable-tanned leather, a process that takes months but ensures unmatched durability and a patina that deepens with character. Our artisans, trained in generations of Nigerian leatherwork, apply precise hand-stitching (often utilizing the saddle-stitch technique) and finish each edge with hand-painted precision. The resulting cognac hue, paired with solid brass hardware, defines the RootHaus look.
             </p>
             <p className="text-lg italic font-serif text-secondary">
-                "We don't just craft leather; we sculpt future heirlooms."
+                &quot;We don&apos;t just craft leather; we sculpt future heirlooms.&quot;
             </p>
           </div>
           <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl order-1 md:order-2">

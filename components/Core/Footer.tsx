@@ -26,8 +26,8 @@ export function Footer() {
         <div className="space-y-4">
           <h4 className="text-xl font-serif font-bold mb-3 tracking-widest">Shop</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/shop/men" className="hover:text-secondary transition-colors">Men's Collection</Link></li>
-            <li><Link href="/shop/women" className="hover:text-secondary transition-colors">Women's Collection</Link></li>
+            <li><Link href="/shop/men" className="hover:text-secondary transition-colors">Men&apos;s Collection</Link></li>
+            <li><Link href="/shop/women" className="hover:text-secondary transition-colors">Women&apos;s Collection</Link></li>
             <li><Link href="/shop/pets" className="hover:text-secondary transition-colors">Pet Collection</Link></li>
             <li><Link href="/gift-sets" className="hover:text-secondary transition-colors">Gift Sets</Link></li>
           </ul>

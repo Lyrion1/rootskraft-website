@@ -29,7 +29,7 @@ export default function ArtisanStorySection() {
           The name RootHaus embodies the strength of the Iroko tree and the deep roots of Nigerian craft. Every piece we create—from the Oba Wallet to the Ngozi Handbag—is a symbol of **balance** and **justice**, meticulously crafted using ethically-sourced, luxurious hides.
         </p>
         <p className="text-lg font-serif italic text-foreground/80">
-          "The hide tells a story; our hands bring it to life."
+          &quot;The hide tells a story; our hands bring it to life.&quot;
         </p>
         <Button asChild size="lg" variant="outline" className="mt-4 border-primary dark:border-secondary text-primary dark:text-secondary tracking-widest hover:bg-primary/5 dark:hover:bg-secondary/10">
           <Link href="/artisan-story">

@@ -1,29 +1,8 @@
 // app/about/page.tsx
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { FAQSection } from '@/components/Page/FAQSection'; // Corrected import path
-import * as React from 'react';
-import { cn } from '@/lib/utils';
-import * as SeparatorPrimitive from "@radix-ui/react-separator"
-
-// Minimal ShadCN Separator (Moved here from the old inline export)
-const SeparatorComponent = React.forwardRef<
-  React.ElementRef<typeof SeparatorPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
->(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => (
-  <SeparatorPrimitive.Root
-    ref={ref}
-    decorative={decorative}
-    orientation={orientation}
-    className={cn(
-      "shrink-0 bg-border",
-      orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
-      className
-    )}
-    {...props}
-  />
-));
-SeparatorComponent.displayName = SeparatorPrimitive.Root.displayName;
+import { FAQSection } from '@/components/Page/FAQSection';
+import { Separator } from '@/components/ui/separator';
 
 export const metadata: Metadata = {
   title: 'About Us | RootHaus Leather',
@@ -40,7 +19,7 @@ export default function AboutPage() {
         <h2 className="text-xl text-muted-foreground">
           The Values of Root & Hide Co.
         </h2>
-        <SeparatorComponent className="w-24 h-1 mx-auto bg-secondary" />
+        <Separator className="w-24 h-1 mx-auto bg-secondary" />
       </header>
       
       <div className="grid md:grid-cols-3 gap-10 mb-20">
@@ -74,7 +53,7 @@ export default function AboutPage() {
         />
       </div>
 
-      {/* FAQ Section - Now imported correctly */}
+      {/* FAQ Section */}
       <FAQSection /> 
       
     </main>

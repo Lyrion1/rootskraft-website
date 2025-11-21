@@ -77,7 +77,7 @@ export default function CollectionPage({ params }: CollectionPageProps) {
 
       {/* CTA to Custom Orders */}
       <section className='text-center pt-20'>
-        <h2 className="text-3xl font-serif mb-4">Can't find what you need?</h2>
+        <h2 className="text-3xl font-serif mb-4">Can&apos;t find what you need?</h2>
         <Button asChild size="lg" variant="default" className="tracking-widest">
             <Link href="/custom-orders">
               Start a Bespoke Order

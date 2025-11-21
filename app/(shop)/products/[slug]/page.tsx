@@ -6,8 +6,8 @@ import { Metadata } from 'next';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { Truck, Gem, CheckCircle, Zap } from 'lucide-react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'; 
-import ProductGrid from '@/components/ECommerce/ProductGrid'; 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import ProductGrid from '@/components/ECommerce/ProductGrid';
 
 interface ProductPageProps {
   params: {
@@ -23,7 +23,9 @@ export async function generateStaticParams() {
 }
 
 // Generate Metadata for SEO
-export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ProductPageProps): Promise<Metadata> {
   const product = products.find((p) => p.slug === params.slug);
 
   if (!product) return { title: 'Product Not Found' };
@@ -58,9 +60,13 @@ export default function ProductPage({ params }: ProductPageProps) {
 
         {/* Product Details */}
         <div className="flex flex-col space-y-6">
-          <p className="text-sm uppercase font-sans tracking-[0.2em] text-muted-foreground">{product.collection} Collection</p>
-          <h1 className="text-5xl md:text-6xl font-serif font-extrabold tracking-tight text-foreground">{product.name}</h1>
-          
+          <p className="text-sm uppercase font-sans tracking-[0.2em] text-muted-foreground">
+            {product.collection} Collection
+          </p>
+          <h1 className="text-5xl md:text-6xl font-serif font-extrabold tracking-tight text-foreground">
+            {product.name}
+          </h1>
+
           <p className="text-4xl font-serif font-bold text-secondary">
             ₦{product.price.toLocaleString()}
           </p>
@@ -71,11 +77,18 @@ export default function ProductPage({ params }: ProductPageProps) {
 
           {/* Add to Cart / Buy Now */}
           <div className="flex space-x-4 pt-4">
-            <Button size="lg" className="flex-1 uppercase font-bold tracking-widest shadow-lg shadow-primary/20">
+            <Button
+              size="lg"
+              className="flex-1 uppercase font-bold tracking-widest shadow-lg shadow-primary/20"
+            >
               Add to Cart
             </Button>
-            <Button size="lg" variant="secondary" className="flex-1 uppercase font-bold tracking-widest">
-              <Zap className='w-4 h-4 mr-2' /> Buy Now
+            <Button
+              size="lg"
+              variant="secondary"
+              className="flex-1 uppercase font-bold tracking-widest"
+            >
+              <Zap className="w-4 h-4 mr-2" /> Buy Now
             </Button>
           </div>
 
@@ -96,18 +109,38 @@ export default function ProductPage({ params }: ProductPageProps) {
       </section>
 
       {/* Tabs Section (Description, Details, FAQ) */}
-      <section className='pt-20'>
+      <section className="pt-20">
         <Tabs defaultValue="details" className="w-full">
           <TabsList className="grid w-full grid-cols-3 bg-muted/50 dark:bg-card">
-            <TabsTrigger value="description" className='text-base font-serif tracking-wider'>Description</TabsTrigger>
-            <TabsTrigger value="details" className='text-base font-serif tracking-wider'>Materials & Details</TabsTrigger>
-            <TabsTrigger value="shipping" className='text-base font-serif tracking-wider'>Shipping</TabsTrigger>
+            <TabsTrigger
+              value="description"
+              className="text-base font-serif tracking-wider"
+            >
+              Description
+            </TabsTrigger>
+            <TabsTrigger
+              value="details"
+              className="text-base font-serif tracking-wider"
+            >
+              Materials & Details
+            </TabsTrigger>
+            <TabsTrigger
+              value="shipping"
+              className="text-base font-serif tracking-wider"
+            >
+              Shipping
+            </TabsTrigger>
           </TabsList>
-          <TabsContent value="description" className='pt-6'>
-            <h3 className='text-2xl font-serif mb-4'>The Legacy of {product.name}</h3>
-            <p className='leading-relaxed'>{product.description}. RootHaus ensures every product reflects the highest standards of luxury and ethical sourcing.</p>
+          <TabsContent value="description" className="pt-6">
+            <h3 className="text-2xl font-serif mb-4">
+              The Legacy of {product.name}
+            </h3>
+            <p className="leading-relaxed">
+              {product.description}. RootHaus ensures every product reflects the
+              highest standards of luxury and ethical sourcing.
+            </p>
           </TabsContent>
-          <TabsContent value="details" className='pt-6'>
+          <TabsContent value="details" className="pt-6">
             <ul className="space-y-3 text-lg">
               {product.details.map((detail, index) => (
                 <li key={index} className="flex items-start">
@@ -117,17 +150,32 @@ export default function ProductPage({ params }: ProductPageProps) {
               ))}
             </ul>
           </TabsContent>
-          <TabsContent value="shipping" className='pt-6'>
-            <h3 className='text-2xl font-serif mb-4'>Worldwide Delivery and Protection</h3>
-            <p className='leading-relaxed'>All RootHaus items are dispatched with fully insured, tracked global courier services. Standard delivery takes 5-7 business days. Custom orders require an additional 2-4 weeks for production before shipping.</p>
+          <TabsContent value="shipping" className="pt-6">
+            <h3 className="text-2xl font-serif mb-4">
+              Worldwide Delivery and Protection
+            </h3>
+            <p className="leading-relaxed">
+              All RootHaus items are dispatched with fully insured, tracked
+              global courier services. Standard delivery takes 5-7 business
+              days. Custom orders require an additional 2-4 weeks for production
+              before shipping.
+            </p>
           </TabsContent>
         </Tabs>
       </section>
 
       {/* Placeholder for Related Products (using ProductGrid) */}
       <section className="mt-24">
-        <h2 className="text-4xl font-serif font-bold mb-10 text-center">More from the {product.collection} Collection</h2>
-        <ProductGrid products={products.filter(p => p.collection === product.collection && p.id !== product.id).slice(0, 4)} />
+        <h2 className="text-4xl font-serif font-bold mb-10 text-center">
+          More from the {product.collection} Collection
+        </h2>
+        <ProductGrid
+          products={products
+            .filter(
+              (p) => p.collection === product.collection && p.id !== product.id
+            )
+            .slice(0, 4)}
+        />
       </section>
     </main>
   );

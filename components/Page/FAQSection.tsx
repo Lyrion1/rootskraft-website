@@ -1,6 +1,6 @@
 // components/Page/FAQSection.tsx
 import { ChevronDown } from 'lucide-react';
-// This is a simplified placeholder as the full ShadCN Accordion component is lengthy
+// This component should not re-export anything, just define the component for consumption.
 export function FAQSection() {
     const faqItems = [
         { q: "What is vegetable-tanned leather?", a: "It's leather tanned using natural materials like bark, leaves, and fruit. The process is slow and natural, resulting in leather that develops a beautiful patina over time, making it superior to chrome-tanned leather." },

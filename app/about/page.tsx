@@ -45,7 +45,7 @@ export default function AboutPage() {
 
       <div className="relative aspect-[16/6] rounded-xl overflow-hidden shadow-2xl dark:shadow-primary/20 mb-20">
         <Image
-          src="https://placehold.co/1200x500/5e5e5e/fff?text=AI+Image+Ethical+Leather+Sourcing"
+          src="https://placehold.co/1200x500/5e5e5e/fff"
           alt="Wide-angle shot of RootHaus studio"
           fill
           sizes="100vw"

@@ -54,6 +54,22 @@ export function Footer() {
             </li>
             <li>
               <Link
+                href="/shop/girls"
+                className="hover:text-secondary transition-colors"
+              >
+                Girls&apos; Collection
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/shop/boys"
+                className="hover:text-secondary transition-colors"
+              >
+                Boys&apos; Collection
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/shop/pets"
                 className="hover:text-secondary transition-colors"
               >

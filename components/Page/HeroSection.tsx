@@ -25,7 +25,7 @@ export default function HeroSection({ title, subtitle, ctaText, ctaLink, imageUr
       />
       
       {/* Overlay for contrast and luxury feel */}
-      <div className="absolute inset-0 bg-black/60 dark:bg-black/70 backdrop-blur-[1px]"></div>
+      <div className="absolute inset-0 bg-black/70 dark:bg-black/80"></div>
       
       {/* Content */}
       <div className="absolute inset-0 flex items-center justify-center text-center p-4">

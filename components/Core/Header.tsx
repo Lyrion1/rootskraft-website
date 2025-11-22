@@ -19,6 +19,8 @@ const navItems = [
 const collectionLinks = [
   { href: '/shop/men', label: 'Men' },
   { href: '/shop/women', label: 'Women' },
+  { href: '/shop/girls', label: 'Girls' },
+  { href: '/shop/boys', label: 'Boys' },
   { href: '/shop/pets', label: 'Pets (Dogs & Cats)' },
   { href: '/shop/extras', label: 'Accessories & Homeware' },
 ];
@@ -37,7 +39,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex space-x-4 items-center"> 
+        <nav className="hidden lg:flex space-x-8 items-center">{" "}
           
           {/* COLLECTIONS DROPDOWN MENU */}
           <div 

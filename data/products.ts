@@ -14,6 +14,14 @@ const IMAGE_URLS = {
   ezinneClutch: 'https://placehold.co/800x600/6f6f6f/ffffff?text=Ezinne+Evening+Clutch+Ostrich+Pattern',
   chikaCrossbody: 'https://placehold.co/800x600/7c7c7c/ffffff?text=Chika+Crossbody+Saddle+Bag+Deep+Red',
 
+  // GIRLS
+  adaBackpack: 'https://placehold.co/800x600/ff69b4/ffffff?text=Ada+Mini+Backpack+Pink+Leather',
+  chiomaPurse: 'https://placehold.co/800x600/dda0dd/ffffff?text=Chioma+Crossbody+Purse+Purple',
+  
+  // BOYS
+  emekaWallet: 'https://placehold.co/800x600/4169e1/ffffff?text=Emeka+Youth+Wallet+Blue+Leather',
+  chukwuBelt: 'https://placehold.co/800x600/228b22/ffffff?text=Chukwu+Junior+Belt+Forest+Green',
+
   // PETS
   odogwuCollar: 'https://placehold.co/800x600/8d8d8d/ffffff?text=Odogwu+Dog+Collar+with+Brass+Hardware',
   temiHarness: 'https://placehold.co/800x600/9e9e9e/ffffff?text=Temi+Dog+Harness+Padded+for+Comfort',
@@ -36,7 +44,7 @@ export type Product = {
   id: string;
   name: string;
   slug: string;
-  collection: 'Men' | 'Women' | 'Pets' | 'Gift Sets' | 'Extras';
+  collection: 'Men' | 'Women' | 'Girls' | 'Boys' | 'Pets' | 'Gift Sets' | 'Extras';
   category: string;
   price: number;
   description: string;
@@ -70,6 +78,22 @@ export const products: Product[] = [
     description: 'God is greater. A compact saddle bag with adjustable strap for everyday elegance.', 
     imageUrl: IMAGE_URLS.chikaCrossbody, details: ['Deep red vegetable-tanned leather', 'Secure turn-lock closure', 'Lightweight design'] },
 
+  // GIRLS Collection
+  { id: 'girls-ada-backpack', name: 'Ada Mini Backpack', slug: 'ada-mini-backpack', collection: 'Girls', category: 'Bags', price: 35000, 
+    description: 'First daughter. A charming mini backpack perfect for young ladies with style and grace.', 
+    imageUrl: IMAGE_URLS.adaBackpack, details: ['Soft pink leather finish', 'Adjustable padded straps', 'Multiple compartments'] },
+  { id: 'girls-chioma-purse', name: 'Chioma Crossbody Purse', slug: 'chioma-crossbody-purse', collection: 'Girls', category: 'Purses', price: 22000, 
+    description: 'Good God. An elegant crossbody purse designed for the young fashionista.', 
+    imageUrl: IMAGE_URLS.chiomaPurse, details: ['Premium purple leather', 'Adjustable strap', 'Secure magnetic closure'] },
+
+  // BOYS Collection
+  { id: 'boys-emeka-wallet', name: 'Emeka Youth Wallet', slug: 'emeka-youth-wallet', collection: 'Boys', category: 'Wallets', price: 15000, 
+    description: 'Great deeds. A durable youth wallet for the young gentleman learning responsibility.', 
+    imageUrl: IMAGE_URLS.emekaWallet, details: ['Sturdy blue leather', '4 card slots', 'Coin pocket with zipper'] },
+  { id: 'boys-chukwu-belt', name: 'Chukwu Junior Belt', slug: 'chukwu-junior-belt', collection: 'Boys', category: 'Belts', price: 18000, 
+    description: 'Supreme God. A classic belt sized perfectly for young boys, built to last.', 
+    imageUrl: IMAGE_URLS.chukwuBelt, details: ['Forest green vegetable-tanned leather', 'Brass buckle', 'Multiple size holes for growth'] },
+
   // PETS Collection
   { id: 'pets-odogwu-collar', name: 'Odogwu Collar', slug: 'odogwu-collar', collection: 'Pets', category: 'Collars', price: 15000, 
     description: 'For the \'Boss\' of the house. Durable, comfortable, and styled with our Root & Hide aesthetic.', 
@@ -99,5 +123,5 @@ export const products: Product[] = [
     imageUrl: IMAGE_URLS.embossedLogoSet, details: ['Key fob, cable tie, and coaster set', 'Perfect corporate gift', 'Vegetable-tanned leather'] },
 ];
 
-export const collections = ['Men', 'Women', 'Pets', 'Gift Sets', 'Extras'];
+export const collections = ['Men', 'Women', 'Girls', 'Boys', 'Pets', 'Gift Sets', 'Extras'];
 export const allProductImageUrls = IMAGE_URLS;

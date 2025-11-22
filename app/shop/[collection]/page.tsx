@@ -15,7 +15,7 @@ interface CollectionPageProps {
 // Generate Static Params for collections
 export async function generateStaticParams() {
   return collections.map((c) => ({
-    collection: c.toLowerCase().replace(' ', '-'),
+    collection: c.toLowerCase().replaceAll(' ', '-'),
   }));
 }
 

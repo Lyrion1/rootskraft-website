@@ -1,6 +1,5 @@
 // app/blog/[slug]/page.tsx
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 import AdSlot from '@/components/AdSlot';
 
 type Props = {
@@ -18,12 +17,6 @@ export default function BlogPost({ params }: Props) {
   // Placeholder for blog post content
   // In a real implementation, you would fetch the post data here
   const { slug } = params;
-
-  // For now, just show a placeholder
-  // In production, you'd fetch real post data and handle 404s properly
-  if (!slug) {
-    notFound();
-  }
 
   const slotMain = process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG_MAIN;
   const slotFooter = process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG_FOOTER;

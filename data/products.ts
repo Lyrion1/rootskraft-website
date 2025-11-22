@@ -1,44 +1,41 @@
 import { Metadata } from "next";
 
-// --- AI Image Placeholder URLs ---
-// All images are hyper-realistic leather mockups, using placehold.co as requested.
 const IMAGE_URLS = {
   // MEN
-  adeBelt: 'https://placehold.co/800x600/1e1e1e/ffffff?text=Ade+Belt+Black+Saffiano+Leather',
-  obaWallet: 'https://placehold.co/800x600/2f2f2f/ffffff?text=Oba+Wallet+Bifold+Crocodile+Embossed',
-  ajaniStrap: 'https://placehold.co/800x600/3c3c3c/ffffff?text=Ajani+Watch+Strap+Brown+Vegetable+Tanned',
-  ifeDoppKit: 'https://placehold.co/800x600/4a4a4a/ffffff?text=If%E1%BA%BD+Dopp+Kit+Travel+Bag+Vintage+Leather',
+  adeBelt: 'https://placehold.co/800x600/1e1e1e/ffffff',
+  obaWallet: 'https://placehold.co/800x600/2f2f2f/ffffff',
+  ajaniStrap: 'https://placehold.co/800x600/3c3c3c/ffffff',
+  ifeDoppKit: 'https://placehold.co/800x600/4a4a4a/ffffff',
 
   // WOMEN
-  ngoziHandbag: 'https://placehold.co/800x600/5e5e5e/ffffff?text=Ngozi+Luxury+Tote+Handbag+Taupe+Pebbled',
-  ezinneClutch: 'https://placehold.co/800x600/6f6f6f/ffffff?text=Ezinne+Evening+Clutch+Ostrich+Pattern',
-  chikaCrossbody: 'https://placehold.co/800x600/7c7c7c/ffffff?text=Chika+Crossbody+Saddle+Bag+Deep+Red',
+  ngoziHandbag: 'https://placehold.co/800x600/5e5e5e/ffffff',
+  ezinneClutch: 'https://placehold.co/800x600/6f6f6f/ffffff',
+  chikaCrossbody: 'https://placehold.co/800x600/7c7c7c/ffffff',
 
   // GIRLS
-  adaBackpack: 'https://placehold.co/800x600/ff69b4/ffffff?text=Ada+Mini+Backpack+Pink+Leather',
-  chiomaPurse: 'https://placehold.co/800x600/dda0dd/ffffff?text=Chioma+Crossbody+Purse+Purple',
+  adaBackpack: 'https://placehold.co/800x600/ff69b4/ffffff',
+  chiomaPurse: 'https://placehold.co/800x600/dda0dd/ffffff',
   
   // BOYS
-  emekaWallet: 'https://placehold.co/800x600/4169e1/ffffff?text=Emeka+Youth+Wallet+Blue+Leather',
-  chukwuBelt: 'https://placehold.co/800x600/228b22/ffffff?text=Chukwu+Junior+Belt+Forest+Green',
+  emekaWallet: 'https://placehold.co/800x600/4169e1/ffffff',
+  chukwuBelt: 'https://placehold.co/800x600/228b22/ffffff',
 
   // PETS
-  odogwuCollar: 'https://placehold.co/800x600/8d8d8d/ffffff?text=Odogwu+Dog+Collar+with+Brass+Hardware',
-  temiHarness: 'https://placehold.co/800x600/9e9e9e/ffffff?text=Temi+Dog+Harness+Padded+for+Comfort',
-  bisiWalkSet: 'https://placehold.co/800x600/afafaf/ffffff?text=Bisi+Leash+and+Collar+Set+Tan+Leather',
-  ayoTwinningSet: 'https://placehold.co/800x600/bdbdbd/ffffff?text=Ayo+Human+and+Pet+Twinning+Set',
+  odogwuCollar: 'https://placehold.co/800x600/8d8d8d/ffffff',
+  temiHarness: 'https://placehold.co/800x600/9e9e9e/ffffff',
+  bisiWalkSet: 'https://placehold.co/800x600/afafaf/ffffff',
+  ayoTwinningSet: 'https://placehold.co/800x600/bdbdbd/ffffff',
 
   // EXTRAS/GIFT SETS
-  militaryTag: 'https://placehold.co/800x600/cfcfcf/ffffff?text=Military+Dog+Tag+Leather+Sheath+Custom',
-  gemstoneTag: 'https://placehold.co/800x600/dfdfdf/ffffff?text=Gemstone+Dog+Tag+with+Leather+Accent',
-  leahGiftSet: 'https://placehold.co/800x600/efefef/ffffff?text=Leah+Gift+Set+Wallet+and+Belt+Bundle',
-  embossedLogoSet: 'https://placehold.co/800x600/0a0a0a/ffffff?text=RootHaus+Embossed+Logo+Accessories+Kit',
+  militaryTag: 'https://placehold.co/800x600/cfcfcf/ffffff',
+  gemstoneTag: 'https://placehold.co/800x600/dfdfdf/ffffff',
+  leahGiftSet: 'https://placehold.co/800x600/efefef/ffffff',
+  embossedLogoSet: 'https://placehold.co/800x600/0a0a0a/ffffff',
   
-  // LOOKBOOK / HERO PLACEHOLDERS
-  lookbookImage: 'https://placehold.co/1200x800/1e1e1e/ffffff?text=AI+Generated+Luxury+Leather+Lookbook',
-  heroImage: 'https://placehold.co/1920x800/24160b/fff?text=RootHaus+Leather+Hero+Craftsmanship'
+  // LOOKBOOK / HERO
+  lookbookImage: 'https://placehold.co/1200x800/1e1e1e/ffffff',
+  heroImage: 'https://placehold.co/1920x800/24160b/fff'
 };
-// ------------------------------------
 
 export type Product = {
   id: string;

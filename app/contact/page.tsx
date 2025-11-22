@@ -49,11 +49,10 @@ export default function ContactPage() {
       </section>
 
       <section className='mt-20 pt-10 border-t border-border/50 max-w-4xl mx-auto'>
-          {/* Map/Contact Form Placeholder */}
           <h2 className="text-4xl font-serif font-bold text-center mb-8">Visit Us (Virtual Tour)</h2>
           <div className="relative aspect-[16/9] bg-muted rounded-xl">
              <p className='absolute inset-0 flex items-center justify-center text-xl text-muted-foreground'>
-                [AI Image Placeholder: Elegant Lagos Studio Interior]
+                Elegant Lagos Studio Interior
              </p>
           </div>
       </section>

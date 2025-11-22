@@ -107,6 +107,7 @@ export function Header() {
             <NavLink 
               key={c.path} 
               href={c.path}
+              onClick={() => setIsMobileOpen(false)}
               className="pl-4 text-lg font-sans py-1 hover:text-primary transition-colors block"
             >
               {c.name}

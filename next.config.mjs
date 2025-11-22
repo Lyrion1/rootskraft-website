@@ -8,8 +8,8 @@ const nextConfig = {
         hostname: 'placehold.co',
       },
     ],
-    // Allow external images to load without optimization to avoid network restrictions
-    unoptimized: false, // Keep optimization enabled for production
+    // Keep optimization enabled for production (disabled would bypass Next.js image optimization)
+    unoptimized: false,
     // Add loader configuration for better external image handling
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',

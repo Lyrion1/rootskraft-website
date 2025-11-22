@@ -1,4 +1,4 @@
-// app/(shop)/[collection]/page.tsx
+// app/shop/[collection]/page.tsx
 import { products, collections, Product } from '@/data/products';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';

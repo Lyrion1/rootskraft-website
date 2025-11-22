@@ -53,7 +53,7 @@ export function Header() {
               Collections <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-200" />
             </button>
             {isCollectionsOpen && (
-              <div className="absolute top-full left-0 z-50 mt-2 w-56 bg-card border border-border rounded-lg shadow-xl p-2">
+              <div className="absolute top-full left-0 z-[60] mt-0 w-56 bg-card border border-border rounded-lg shadow-xl p-2">
                 {collectionLinks.map(link => (
                   <Link 
                     key={link.href} 

@@ -1,4 +1,4 @@
-// app/(shop)/[collection]/page.tsx
+// app/shop/[collection]/page.tsx
 import { products, collections, Product } from '@/data/products';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
@@ -15,7 +15,7 @@ interface CollectionPageProps {
 // Generate Static Params for collections
 export async function generateStaticParams() {
   return collections.map((c) => ({
-    collection: c.toLowerCase().replace(' ', '-'),
+    collection: c.toLowerCase().replaceAll(' ', '-'),
   }));
 }
 

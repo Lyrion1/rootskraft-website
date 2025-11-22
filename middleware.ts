@@ -13,10 +13,14 @@ export function middleware(req: NextRequest) {
 
   if (!req.cookies.get('roothaus.currency')) {
     const currency = CCY_BY_COUNTRY[country] ?? 'NGN';
-    const multiplier = HIGH_GDP.has(country) ? '2' : '1';
     res.cookies.set('roothaus.currency', currency, { path: '/', maxAge: 60 * 60 * 24 * 7 });
+  }
+  
+  if (!req.cookies.get('roothaus.multiplier')) {
+    const multiplier = HIGH_GDP.has(country) ? '2' : '1';
     res.cookies.set('roothaus.multiplier', multiplier, { path: '/', maxAge: 60 * 60 * 24 * 7 });
   }
+  
   return res;
 }
 

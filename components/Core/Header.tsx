@@ -26,7 +26,7 @@ export function Header() {
         
         {/* Logo and Home Link */}
         <Link href="/" className="flex items-center space-x-2">
-          <EmbossedLogo size="sm" className="p-2"/>
+          <EmbossedLogo size="sm" className="p-0 shadow-none"/>
         </Link>
 
         {/* Desktop Navigation */}

@@ -68,7 +68,7 @@ export function Header() {
             )}
           </div>
           
-          {/* OTHER NAV LINKS (Spacing reduced to space-x-6) */}
+          {/* OTHER NAV LINKS */}
           {navItems.map((item) => (
             <Link 
               key={item.href} 

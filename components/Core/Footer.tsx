@@ -125,6 +125,30 @@ export function Footer() {
                 Bespoke Orders
               </Link>
             </li>
+            <li>
+              <Link
+                href="/blog"
+                className="hover:text-secondary transition-colors"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/live/lifestyle"
+                className="hover:text-secondary transition-colors"
+              >
+                Live Updates
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/subscribe"
+                className="hover:text-secondary transition-colors"
+              >
+                Subscribe
+              </Link>
+            </li>
           </ul>
         </div>
 

@@ -16,6 +16,9 @@ const navItems = [
   { href: '/artisan-story', label: 'Brand Story' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/live/lifestyle', label: 'Live' },
+  { href: '/subscribe', label: 'Subscribe' },
 ];
 
 export function Header() {

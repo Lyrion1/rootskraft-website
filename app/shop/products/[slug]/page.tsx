@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Truck, Gem, CheckCircle, Zap } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import ProductGrid from '@/components/ECommerce/ProductGrid';
+import { AddToCart } from '@/components/ECommerce/AddToCart';
 
 interface ProductPageProps {
   params: {
@@ -77,12 +78,7 @@ export default function ProductPage({ params }: ProductPageProps) {
 
           {/* Add to Cart / Buy Now */}
           <div className="flex space-x-4 pt-4">
-            <Button
-              size="lg"
-              className="flex-1 uppercase font-bold tracking-widest shadow-lg shadow-primary/20"
-            >
-              Add to Cart
-            </Button>
+            <AddToCart id={product.id} />
             <Button
               size="lg"
               variant="secondary"

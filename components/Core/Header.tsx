@@ -8,18 +8,7 @@ import { ThemeToggle } from './ThemeToggle';
 import EmbossedLogo from '../Brand/EmbossedLogo';
 import { CATEGORIES } from '@/data/categories';
 import NavLink from '@/components/NavLink';
-
-const navItems = [
-  // Shop/Collections is now a submenu item
-  { href: '/gift-sets', label: 'Gift Sets' },
-  { href: '/lookbook', label: 'Lookbook' },
-  { href: '/artisan-story', label: 'Brand Story' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/live/lifestyle', label: 'Live' },
-  { href: '/subscribe', label: 'Subscribe' },
-];
+import { PRIMARY_NAV } from '@/data/nav';
 
 export function Header() {
   const [isMobileOpen, setIsMobileOpen] = React.useState(false);
@@ -36,49 +25,60 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex space-x-4 items-center">
-          
-          {/* COLLECTIONS DROPDOWN MENU */}
-          <div 
-            className="relative"
-            onMouseEnter={() => setIsCollectionsOpen(true)}
-            onMouseLeave={() => setIsCollectionsOpen(false)}
-          >
-            <button 
-              className="flex items-center text-lg font-serif uppercase tracking-widest cursor-pointer text-foreground hover:text-primary transition-colors duration-300 bg-transparent border-0 p-0"
-              aria-expanded={isCollectionsOpen}
-              aria-haspopup="true"
-            >
-              Collections <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-200" />
-            </button>
-            {isCollectionsOpen && (
-              <div className="absolute top-full left-0 z-[60] mt-0 w-56 bg-card border border-border rounded-lg shadow-xl p-2">
-                <ul>
-                  {Object.values(CATEGORIES).map(c => (
-                    <li key={c.path} className="px-3 py-2">
-                      <NavLink href={c.path}>{c.name}</NavLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-          
-          {/* OTHER NAV LINKS */}
-          {navItems.map((item) => (
-            <Link 
-              key={item.href} 
-              href={item.href} 
-              className="text-lg font-serif uppercase tracking-widest text-foreground hover:text-primary transition-colors duration-300"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <Link 
-            href="/custom-orders" 
-            className="text-lg font-serif uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300 font-bold"
-          >
-            Custom Orders
-          </Link>
+          <ul className="flex items-center gap-x-4">
+            {PRIMARY_NAV.map(item => (
+              item.label === 'COLLECTIONS'
+                ? (
+                  <li key={item.label} className="relative">
+                    {/* COLLECTIONS DROPDOWN MENU */}
+                    <div 
+                      onMouseEnter={() => setIsCollectionsOpen(true)}
+                      onMouseLeave={() => setIsCollectionsOpen(false)}
+                    >
+                      <button 
+                        className="flex items-center text-lg font-serif uppercase tracking-widest cursor-pointer text-foreground hover:text-primary transition-colors duration-300 bg-transparent border-0 p-0"
+                        aria-expanded={isCollectionsOpen}
+                        aria-haspopup="true"
+                      >
+                        COLLECTIONS <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-200" />
+                      </button>
+                      {isCollectionsOpen && (
+                        <div className="absolute top-full left-0 z-[60] mt-0 w-56 bg-card border border-border rounded-lg shadow-xl p-2">
+                          <ul>
+                            {Object.values(CATEGORIES).map(c => (
+                              <li key={c.path} className="px-3 py-2">
+                                <NavLink href={c.path}>{c.name}</NavLink>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  </li>
+                )
+                : item.label === 'CUSTOM ORDERS'
+                ? (
+                  <li key={item.label}>
+                    <NavLink 
+                      href={item.href}
+                      className="text-lg font-serif uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300 font-bold"
+                    >
+                      {item.label}
+                    </NavLink>
+                  </li>
+                )
+                : (
+                  <li key={item.label}>
+                    <NavLink 
+                      href={item.href}
+                      className="text-lg font-serif uppercase tracking-widest text-foreground hover:text-primary transition-colors duration-300"
+                    >
+                      {item.label}
+                    </NavLink>
+                  </li>
+                )
+            ))}
+          </ul>
         </nav>
 
         {/* Actions and Mobile Menu Button */}
@@ -118,23 +118,18 @@ export function Header() {
           ))}
 
           {/* Other Links for Mobile */}
-          {navItems.map((item) => (
-            <Link 
+          {PRIMARY_NAV.filter(item => item.label !== 'COLLECTIONS').map((item) => (
+            <NavLink 
               key={item.href} 
               href={item.href} 
               onClick={() => setIsMobileOpen(false)}
-              className="text-xl font-serif tracking-wide py-2 border-b border-border/50 hover:text-primary transition-colors"
+              className={`text-xl font-serif tracking-wide py-2 border-b border-border/50 hover:text-primary transition-colors ${
+                item.label === 'CUSTOM ORDERS' ? 'text-secondary font-bold' : ''
+              }`}
             >
               {item.label}
-            </Link>
+            </NavLink>
           ))}
-          <Link 
-            href="/custom-orders" 
-            onClick={() => setIsMobileOpen(false)}
-            className="text-xl font-serif tracking-wide py-2 text-secondary font-bold hover:text-primary transition-colors"
-          >
-            Custom Orders
-          </Link>
         </nav>
       </div>
     </header>

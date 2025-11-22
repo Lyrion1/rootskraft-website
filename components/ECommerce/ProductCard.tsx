@@ -30,7 +30,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <p className="text-xs uppercase text-muted-foreground">{product.collection}</p>
       </CardHeader>
       <CardContent className="p-4 pt-1 flex-grow">
-        <div data-price data-id={`product-${product.id}`} className="text-2xl font-bold font-serif">Loading price…</div>
+        <div data-price data-id={`product-${product.id}`} className="text-2xl font-bold font-serif" aria-live="polite" aria-label="Product price">Loading price…</div>
         <PriceClient id={`product-${product.id}`} base={product.price} />
       </CardContent>
       <CardFooter className="p-4 pt-0">

@@ -36,7 +36,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex space-x-6 items-center"> 
+        <nav className="hidden lg:flex space-x-4 items-center"> 
           
           {/* COLLECTIONS DROPDOWN MENU */}
           <div 

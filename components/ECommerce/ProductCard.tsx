@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Product } from '@/data/products';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import PriceClient from '@/components/PriceClient';
 
 interface ProductCardProps {
   product: Product;
@@ -29,7 +30,8 @@ export function ProductCard({ product }: ProductCardProps) {
         <p className="text-xs uppercase text-muted-foreground">{product.collection}</p>
       </CardHeader>
       <CardContent className="p-4 pt-1 flex-grow">
-        <p className="text-2xl font-bold font-serif">₦{product.price.toLocaleString()}</p>
+        <div data-price data-id={`product-${product.id}`} className="text-2xl font-bold font-serif">Loading price…</div>
+        <PriceClient id={`product-${product.id}`} base={product.price} />
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button asChild size="default" className="w-full tracking-widest">

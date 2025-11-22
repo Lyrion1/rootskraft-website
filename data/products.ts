@@ -125,3 +125,6 @@ export const products: Product[] = [
 
 export const collections = ['Men', 'Women', 'Girls', 'Boys', 'Pets', 'Gift Sets', 'Extras'];
 export const allProductImageUrls = IMAGE_URLS;
+
+// Alias for compatibility
+export const PRODUCTS = products;

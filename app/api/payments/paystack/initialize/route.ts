@@ -21,7 +21,10 @@ export async function POST(req: Request) {
 
     if (totalNgn <= 0) return NextResponse.json({ message: 'Cart empty' }, { status: 400 });
 
-    const secret = process.env.PAYSTACK_SECRET_KEY!;
+    const secret = process.env.PAYSTACK_SECRET_KEY;
+    if (!secret) {
+      return NextResponse.json({ message: 'Payment system not configured' }, { status: 500 });
+    }
     const resp = await fetch('https://api.paystack.co/transaction/initialize', {
       method: 'POST',
       headers: { 'Authorization': `Bearer ${secret}`, 'Content-Type': 'application/json' },

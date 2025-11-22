@@ -4,7 +4,11 @@ import { createHmac } from 'crypto';
 export const runtime = 'nodejs';
 
 export async function POST(req: NextRequest) {
-  const secret = process.env.PAYSTACK_SECRET_KEY!;
+  const secret = process.env.PAYSTACK_SECRET_KEY;
+  if (!secret) {
+    return NextResponse.json({ message: 'Webhook not configured' }, { status: 500 });
+  }
+  
   const payload = await req.text(); // raw body
   const sig = req.headers.get('x-paystack-signature') || '';
   const expected = createHmac('sha512', secret).update(payload).digest('hex');

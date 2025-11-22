@@ -44,9 +44,13 @@ export function Header() {
             onMouseEnter={() => setIsCollectionsOpen(true)}
             onMouseLeave={() => setIsCollectionsOpen(false)}
           >
-            <span className="flex items-center text-lg font-serif uppercase tracking-widest cursor-pointer text-foreground hover:text-primary transition-colors duration-300">
+            <button 
+              className="flex items-center text-lg font-serif uppercase tracking-widest cursor-pointer text-foreground hover:text-primary transition-colors duration-300 bg-transparent border-0 p-0"
+              aria-expanded={isCollectionsOpen}
+              aria-haspopup="true"
+            >
               Collections <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-200" />
-            </span>
+            </button>
             {isCollectionsOpen && (
               <div className="absolute top-full left-0 z-50 mt-2 w-56 bg-card border border-border rounded-lg shadow-xl p-2">
                 {collectionLinks.map(link => (
@@ -101,7 +105,7 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay - Needs adjustment for new structure */}
+      {/* Mobile Menu Overlay */}
       <div className={`lg:hidden transition-all duration-300 ease-in-out ${isMobileOpen ? 'max-h-screen opacity-100 py-4' : 'max-h-0 opacity-0 overflow-hidden'}`}>
         <nav className="flex flex-col space-y-3 p-4 bg-background/95">
           {/* Collections Submenu for Mobile */}

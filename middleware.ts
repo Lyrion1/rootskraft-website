@@ -9,18 +9,24 @@ const CCY_BY_COUNTRY: Record<string,string> = {
 
 export function middleware(req: NextRequest) {
   const res = NextResponse.next();
-  const country = req.geo?.country?.toUpperCase() ?? 'NG';
+
+  // robust country detection: Next/Vercel geo, then Netlify x-nf-geo, then default NG
+  let country = req.geo?.country?.toUpperCase() ?? 'NG';
+  const nf = req.headers.get('x-nf-geo'); // Netlify injects this JSON header
+  if (nf) {
+    try {
+      const parsed = JSON.parse(nf);
+      const code = (parsed?.country?.code || parsed?.country?.code_iso2 || parsed?.country)?.toUpperCase();
+      if (code) country = code;
+    } catch {}
+  }
 
   if (!req.cookies.get('roothaus.currency')) {
     const currency = CCY_BY_COUNTRY[country] ?? 'NGN';
-    res.cookies.set('roothaus.currency', currency, { path: '/', maxAge: 60 * 60 * 24 * 7 });
-  }
-  
-  if (!req.cookies.get('roothaus.multiplier')) {
     const multiplier = HIGH_GDP.has(country) ? '2' : '1';
+    res.cookies.set('roothaus.currency', currency, { path: '/', maxAge: 60 * 60 * 24 * 7 });
     res.cookies.set('roothaus.multiplier', multiplier, { path: '/', maxAge: 60 * 60 * 24 * 7 });
   }
-  
   return res;
 }
 

@@ -1,4 +1,4 @@
-// app/(shop)/page.tsx
+// app/shop/page.tsx
 import { redirect } from 'next/navigation';
 
 // This is the main /shop landing page. Since we have collections, 

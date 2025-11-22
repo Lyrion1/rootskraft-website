@@ -22,8 +22,7 @@ const EmbossedLogo: React.FC<EmbossedLogoProps> = ({ size = 'md', className = ''
   return (
     <div
       className={cn(
-        `relative inline-flex flex-col items-center justify-center p-6 md:p-10 rounded-xl overflow-hidden 
-        shadow-2xl shadow-primary/40 dark:shadow-secondary/30 
+        `relative inline-flex flex-col items-center justify-center rounded-xl overflow-hidden 
         bg-primary/90 dark:bg-dark-bg/80`,
         className
       )}

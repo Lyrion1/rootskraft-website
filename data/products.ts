@@ -1,127 +1,179 @@
-import { Metadata } from "next";
-
-// --- AI Image Placeholder URLs ---
-// All images are hyper-realistic leather mockups, using placehold.co as requested.
-const IMAGE_URLS = {
-  // MEN
-  adeBelt: 'https://placehold.co/800x600/1e1e1e/ffffff?text=Ade+Belt+Black+Saffiano+Leather',
-  obaWallet: 'https://placehold.co/800x600/2f2f2f/ffffff?text=Oba+Wallet+Bifold+Crocodile+Embossed',
-  ajaniStrap: 'https://placehold.co/800x600/3c3c3c/ffffff?text=Ajani+Watch+Strap+Brown+Vegetable+Tanned',
-  ifeDoppKit: 'https://placehold.co/800x600/4a4a4a/ffffff?text=If%E1%BA%BD+Dopp+Kit+Travel+Bag+Vintage+Leather',
-
-  // WOMEN
-  ngoziHandbag: 'https://placehold.co/800x600/5e5e5e/ffffff?text=Ngozi+Luxury+Tote+Handbag+Taupe+Pebbled',
-  ezinneClutch: 'https://placehold.co/800x600/6f6f6f/ffffff?text=Ezinne+Evening+Clutch+Ostrich+Pattern',
-  chikaCrossbody: 'https://placehold.co/800x600/7c7c7c/ffffff?text=Chika+Crossbody+Saddle+Bag+Deep+Red',
-
-  // GIRLS
-  adaBackpack: 'https://placehold.co/800x600/ff69b4/ffffff?text=Ada+Mini+Backpack+Pink+Leather',
-  chiomaPurse: 'https://placehold.co/800x600/dda0dd/ffffff?text=Chioma+Crossbody+Purse+Purple',
-  
-  // BOYS
-  emekaWallet: 'https://placehold.co/800x600/4169e1/ffffff?text=Emeka+Youth+Wallet+Blue+Leather',
-  chukwuBelt: 'https://placehold.co/800x600/228b22/ffffff?text=Chukwu+Junior+Belt+Forest+Green',
-
-  // PETS
-  odogwuCollar: 'https://placehold.co/800x600/8d8d8d/ffffff?text=Odogwu+Dog+Collar+with+Brass+Hardware',
-  temiHarness: 'https://placehold.co/800x600/9e9e9e/ffffff?text=Temi+Dog+Harness+Padded+for+Comfort',
-  bisiWalkSet: 'https://placehold.co/800x600/afafaf/ffffff?text=Bisi+Leash+and+Collar+Set+Tan+Leather',
-  ayoTwinningSet: 'https://placehold.co/800x600/bdbdbd/ffffff?text=Ayo+Human+and+Pet+Twinning+Set',
-
-  // EXTRAS/GIFT SETS
-  militaryTag: 'https://placehold.co/800x600/cfcfcf/ffffff?text=Military+Dog+Tag+Leather+Sheath+Custom',
-  gemstoneTag: 'https://placehold.co/800x600/dfdfdf/ffffff?text=Gemstone+Dog+Tag+with+Leather+Accent',
-  leahGiftSet: 'https://placehold.co/800x600/efefef/ffffff?text=Leah+Gift+Set+Wallet+and+Belt+Bundle',
-  embossedLogoSet: 'https://placehold.co/800x600/0a0a0a/ffffff?text=RootHaus+Embossed+Logo+Accessories+Kit',
-  
-  // LOOKBOOK / HERO PLACEHOLDERS
-  lookbookImage: 'https://placehold.co/1200x800/1e1e1e/ffffff?text=AI+Generated+Luxury+Leather+Lookbook',
-  heroImage: 'https://placehold.co/1920x800/24160b/fff?text=RootHaus+Leather+Hero+Craftsmanship'
-};
-// ------------------------------------
-
 export type Product = {
-  id: string;
-  name: string;
-  slug: string;
-  collection: 'Men' | 'Women' | 'Girls' | 'Boys' | 'Pets' | 'Gift Sets' | 'Extras';
-  category: string;
-  price: number;
-  description: string;
-  imageUrl: string;
-  details: string[];
+id: string;
+name: string;
+slug: string;
+category: 'accessories-homeware'|'boys'|'girls'|'men'|'women'|'pets';
+price_ngn: number; // base currency NGN
+description: string;
+images: string[];
+options?: { color?: string[]; size?: string[] };
+tags?: string[];
 };
 
-export const products: Product[] = [
-  // MEN Collection
-  { id: 'men-ade-belt', name: 'Ade Belt', slug: 'ade-belt', collection: 'Men', category: 'Belts', price: 25000, 
-    description: 'A masterpiece of balance, the Ade Belt features a celestial alignment buckle and rich Saffiano leather.', 
-    imageUrl: IMAGE_URLS.adeBelt, details: ['Hand-stitched in Lagos', 'Solid brass custom buckle', 'Ethically sourced Saffiano leather'] },
-  { id: 'men-oba-wallet', name: 'Oba Wallet', slug: 'oba-wallet', collection: 'Men', category: 'Wallets', price: 18000, 
-    description: 'The King’s choice. A compact bifold wallet with subtle crocodile embossing, symbolizing root strength.', 
-    imageUrl: IMAGE_URLS.obaWallet, details: ['8 card slots', 'Hidden money compartment', 'Crocodile-embossed fine Italian leather'] },
-  { id: 'men-ajani-strap', name: 'Ajani Strap', slug: 'ajani-strap', collection: 'Men', category: 'Accessories', price: 12500, 
-    description: 'A perfect fit. Vegetable-tanned leather watch strap designed for timeless elegance.', 
-    imageUrl: IMAGE_URLS.ajaniStrap, details: ['Quick-release spring bars', 'Vegetable-tanned leather', 'Brass pin buckle'] },
-  { id: 'men-ife-dopp', name: 'Ifẹ́ Dopp Kit', slug: 'ife-dopp-kit', collection: 'Men', category: 'Travel', price: 35000, 
-    description: 'Love carried. A rugged yet refined travel bag that ages beautifully with every journey.', 
-    imageUrl: IMAGE_URLS.ifeDoppKit, details: ['Water-resistant interior lining', 'Heavy-duty zipper', 'Vintage full-grain leather'] },
+export const PRODUCTS: Product[] = [
+// --- Accessories & Homeware (Extras) ---
+{
+id: 'ah-ekotray',
+name: 'Eko Entry Tray',
+slug: 'eko-entry-tray',
+category: 'accessories-homeware',
+price_ngn: 24500,
+description: 'Hand-molded valet tray in full-grain leather; snap corners, suede back. Inspired by Lagos skylines.',
+images: [
+'https://placehold.co/800x600/png?text=Eko+Entry+Tray+1',
+'https://placehold.co/800x600/png?text=Eko+Entry+Tray+2'
+],
+tags: ['home', 'valet', 'gift']
+},
+{
+id: 'ah-ogan-candle',
+name: 'Ogun Candle Sleeve',
+slug: 'ogun-candle-sleeve',
+category: 'accessories-homeware',
+price_ngn: 18500,
+description: 'Vegetable-tanned leather sleeve for 8oz candles with heat-safe lining; debossed Roothaus crest.',
+images: ['https://placehold.co/800x600/png?text=Ogun+Candle+Sleeve'],
+tags: ['home', 'candle']
+},
+{
+id: 'ah-aso-mat',
+name: 'Aso-Òkè Desk Mat',
+slug: 'aso-oke-desk-mat',
+category: 'accessories-homeware',
+price_ngn: 49500,
+description: 'Desk mat backed with woven Aso-Òkè trim; cable passthrough, stitched edge, anti-slip base.',
+images: ['https://placehold.co/1200x700/png?text=Aso+Oke+Desk+Mat'],
+tags: ['workspace']
+},
+{
+id: 'ah-calabash-coasters',
+name: 'Calabash Coaster Set (4)',
+slug: 'calabash-coaster-set',
+category: 'accessories-homeware',
+price_ngn: 16500,
+description: 'Set of 4 round coasters, burnished edges, water-resistant finish, nest neatly in matching holder.',
+images: ['https://placehold.co/800x600/png?text=Calabash+Coasters'],
+tags: ['home', 'entertaining']
+},
 
-  // WOMEN Collection
-  { id: 'women-ngozi-bag', name: 'Ngozi Handbag', slug: 'ngozi-handbag', collection: 'Women', category: 'Handbags', price: 85000, 
-    description: 'A blessing of a bag. The structured Ngozi Tote features our signature RootHaus lining.', 
-    imageUrl: IMAGE_URLS.ngoziHandbag, details: ['Pebbled calfskin leather', 'Suede interior', 'Custom-cast gold hardware'] },
-  { id: 'women-ezinne-clutch', name: 'Ezinne Clutch', slug: 'ezinne-clutch', collection: 'Women', category: 'Clutches', price: 45000, 
-    description: 'Good Mother. An elegant evening clutch with a subtle ostrich pattern for celestial celebrations.', 
-    imageUrl: IMAGE_URLS.ezinneClutch, details: ['Detachable chain strap', 'Magnetic closure', 'Full-grain embossed leather'] },
-  { id: 'women-chika-crossbody', name: 'Chika Crossbody', slug: 'chika-crossbody', collection: 'Women', category: 'Bags', price: 55000, 
-    description: 'God is greater. A compact saddle bag with adjustable strap for everyday elegance.', 
-    imageUrl: IMAGE_URLS.chikaCrossbody, details: ['Deep red vegetable-tanned leather', 'Secure turn-lock closure', 'Lightweight design'] },
+// --- Boys (4) ---
+{
+id: 'boy-mini-satchel',
+name: 'Kano Kickabout Mini Satchel',
+slug: 'kano-kickabout-mini-satchel',
+category: 'boys',
+price_ngn: 35500,
+description: 'Rugged cross-body for school and play; magnetic flap, adjustable strap, name card window.',
+images: ['https://placehold.co/800x600/png?text=Boys+Mini+Satchel'],
+tags: ['boys','school']
+},
+{
+id: 'boy-passport-folio',
+name: 'Explorer Passport Folio',
+slug: 'explorer-passport-folio',
+category: 'boys',
+price_ngn: 19500,
+description: 'Compact folio for passport, tickets, SIM pin and stickers. Contrast stitch, snap closure.',
+images: ['https://placehold.co/800x600/png?text=Boys+Passport+Folio'],
+tags: ['travel']
+},
+{
+id: 'boy-safari-belt',
+name: 'Junior Safari Belt',
+slug: 'junior-safari-belt',
+category: 'boys',
+price_ngn: 12500,
+description: 'Vegetable-tanned belt with matte buckle and playful keeper colors.',
+images: ['https://placehold.co/800x600/png?text=Junior+Safari+Belt']
+},
+{
+id: 'boy-tool-roll',
+name: 'Young Artisan Tool Roll',
+slug: 'young-artisan-tool-roll',
+category: 'boys',
+price_ngn: 22500,
+description: 'Canvas-lined leather roll for pencils and tinkering tools. Encourages craft safely.',
+images: ['https://placehold.co/800x600/png?text=Young+Artisan+Tool+Roll']
+},
 
-  // GIRLS Collection
-  { id: 'girls-ada-backpack', name: 'Ada Mini Backpack', slug: 'ada-mini-backpack', collection: 'Girls', category: 'Bags', price: 35000, 
-    description: 'First daughter. A charming mini backpack perfect for young ladies with style and grace.', 
-    imageUrl: IMAGE_URLS.adaBackpack, details: ['Soft pink leather finish', 'Adjustable padded straps', 'Multiple compartments'] },
-  { id: 'girls-chioma-purse', name: 'Chioma Crossbody Purse', slug: 'chioma-crossbody-purse', collection: 'Girls', category: 'Purses', price: 22000, 
-    description: 'Good God. An elegant crossbody purse designed for the young fashionista.', 
-    imageUrl: IMAGE_URLS.chiomaPurse, details: ['Premium purple leather', 'Adjustable strap', 'Secure magnetic closure'] },
+// --- Girls (4) ---
+{
+id: 'girl-charm-pouch',
+name: 'Adire Charm Pouch',
+slug: 'adire-charm-pouch',
+category: 'girls',
+price_ngn: 14500,
+description: 'Mini zip pouch with Adire-print tab; holds hair ties, trinkets, and first lip balm.',
+images: ['https://placehold.co/800x600/png?text=Adire+Charm+Pouch']
+},
+{
+id: 'girl-market-tote',
+name: 'Mini Market Tote',
+slug: 'mini-market-tote',
+category: 'girls',
+price_ngn: 36500,
+description: 'Scaled-down open tote with reinforced base; fits sketchbook and snacks.',
+images: ['https://placehold.co/800x600/png?text=Mini+Market+Tote']
+},
+{
+id: 'girl-clip-case',
+name: 'Afrobeats Hair-Clip Case',
+slug: 'afrobeats-hair-clip-case',
+category: 'girls',
+price_ngn: 13500,
+description: 'Snap case with felt insert to organize clips and bands; key-ring loop.',
+images: ['https://placehold.co/800x600/png?text=Hair+Clip+Case']
+},
+{
+id: 'girl-sketch-sleeve',
+name: 'Sketchbook Sleeve',
+slug: 'sketchbook-sleeve',
+category: 'girls',
+price_ngn: 21500,
+description: 'Padded sleeve for A5/A4 sketchbooks with pencil pocket and charm anchor.',
+images: ['https://placehold.co/800x600/png?text=Sketchbook+Sleeve']
+},
 
-  // BOYS Collection
-  { id: 'boys-emeka-wallet', name: 'Emeka Youth Wallet', slug: 'emeka-youth-wallet', collection: 'Boys', category: 'Wallets', price: 15000, 
-    description: 'Great deeds. A durable youth wallet for the young gentleman learning responsibility.', 
-    imageUrl: IMAGE_URLS.emekaWallet, details: ['Sturdy blue leather', '4 card slots', 'Coin pocket with zipper'] },
-  { id: 'boys-chukwu-belt', name: 'Chukwu Junior Belt', slug: 'chukwu-junior-belt', collection: 'Boys', category: 'Belts', price: 18000, 
-    description: 'Supreme God. A classic belt sized perfectly for young boys, built to last.', 
-    imageUrl: IMAGE_URLS.chukwuBelt, details: ['Forest green vegetable-tanned leather', 'Brass buckle', 'Multiple size holes for growth'] },
-
-  // PETS Collection
-  { id: 'pets-odogwu-collar', name: 'Odogwu Collar', slug: 'odogwu-collar', collection: 'Pets', category: 'Collars', price: 15000, 
-    description: 'For the \'Boss\' of the house. Durable, comfortable, and styled with our Root & Hide aesthetic.', 
-    imageUrl: IMAGE_URLS.odogwuCollar, details: ['Soft sheepskin lining', 'Heavy-duty solid brass fittings', 'Available in all sizes'] },
-  { id: 'pets-temi-harness', name: 'Temi Harness', slug: 'temi-harness', collection: 'Pets', category: 'Harnesses', price: 28000, 
-    description: 'Temi (Mine). A padded ergonomic harness ensuring comfort and control for your cherished companion.', 
-    imageUrl: IMAGE_URLS.temiHarness, details: ['Ergonomic padding', 'Adjustable chest straps', 'Weather-resistant leather'] },
-  { id: 'pets-bisi-set', name: 'Bisi Walk Set', slug: 'bisi-walk-set', collection: 'Pets', category: 'Sets', price: 38000, 
-    description: 'Born on Saturday. A beautiful set including a matching leash and collar in tan leather.', 
-    imageUrl: IMAGE_URLS.bisiWalkSet, details: ['Matching leash and collar', 'Reinforced stitching', 'Ideal for medium to large breeds'] },
-  { id: 'pets-ayo-twinning', name: 'Ayo Twinning Set', slug: 'ayo-twinning-set', collection: 'Pets', category: 'Sets', price: 60000, 
-    description: 'Joy. Matching accessories for you and your pet to share the RootHaus luxury.', 
-    imageUrl: IMAGE_URLS.ayoTwinningSet, details: ['Matching bracelet/keychain for owner', 'Premium leather', 'Symbol of companionship'] },
-
-  // EXTRAS / GIFT SETS
-  { id: 'extras-military-tag', name: 'Military Dog Tag', slug: 'military-dog-tag', collection: 'Extras', category: 'Tags', price: 8000, 
-    description: 'A rugged leather sheath for a classic military dog tag, built for longevity.', 
-    imageUrl: IMAGE_URLS.militaryTag, details: ['Personal engraving available', 'Thick saddle leather', 'Secure loop attachment'] },
-  { id: 'extras-gemstone-tag', name: 'Gemstone Dog Tag', slug: 'gemstone-dog-tag', collection: 'Extras', category: 'Tags', price: 10000, 
-    description: 'A celestial accent. Genuine gemstone inlay with leather backing.', 
-    imageUrl: IMAGE_URLS.gemstoneTag, details: ['Choice of gemstone (e.g., Tiger Eye, Lapis)', 'Hand-polished finish', 'Luxury pet identification'] },
-  { id: 'extras-leah-gift', name: 'Leah Gift Set', slug: 'leah-gift-set', collection: 'Gift Sets', category: 'Sets', price: 40000, 
-    description: 'The perfect introduction to RootHaus quality. Includes an Oba Wallet and Ajani Strap.', 
-    imageUrl: IMAGE_URLS.leahGiftSet, details: ['Hand-packed in an engraved wooden box', 'Curated Men\'s selection', 'Personalisation available'] },
-  { id: 'extras-logo-kit', name: 'RootHaus Embossed Logo Set', slug: 'embossed-logo-set', collection: 'Gift Sets', category: 'Sets', price: 15000, 
-    description: 'Small accessories showcasing the iconic RootHaus embossed logo.', 
-    imageUrl: IMAGE_URLS.embossedLogoSet, details: ['Key fob, cable tie, and coaster set', 'Perfect corporate gift', 'Vegetable-tanned leather'] },
+// --- Pets: Dogs & Cats (4) ---
+{
+id: 'pet-dog-collar',
+name: 'Lagos Trail Dog Collar',
+slug: 'lagos-trail-dog-collar',
+category: 'pets',
+price_ngn: 18500,
+description: 'Full-grain leather collar with padded lining and brass hardware. Sizes XS–L for puppies to large breeds.',
+images: ['https://placehold.co/800x600/png?text=Dog+Collar'],
+options: { size: ['XS','S','M','L'] },
+tags: ['dog', 'collar']
+},
+{
+id: 'pet-dog-leash',
+name: 'Lekki Hands-Free Leash',
+slug: 'lekki-hands-free-leash',
+category: 'pets',
+price_ngn: 29500,
+description: 'Adjustable cross-body leash with swivel clip; quick ring for café tie-downs. Matches the Trail Collar.',
+images: ['https://placehold.co/800x600/png?text=Dog+Leash'],
+tags: ['dog', 'leash']
+},
+{
+id: 'pet-cat-collar',
+name: 'Whisker Breakaway Cat Collar',
+slug: 'whisker-breakaway-cat-collar',
+category: 'pets',
+price_ngn: 13500,
+description: 'Lightweight leather cat collar with **breakaway safety buckle** and tiny bell—safe for indoor/outdoor cats.',
+images: ['https://placehold.co/800x600/png?text=Cat+Collar'],
+tags: ['cat', 'collar', 'breakaway']
+},
+{
+id: 'pet-treat-pouch',
+name: 'Oniru Treat Pouch & Waste Bag Holder',
+slug: 'oniru-treat-pouch',
+category: 'pets',
+price_ngn: 17500,
+description: 'Belt-clip pouch for training treats plus hidden waste-bag dispenser. Works for both dogs and cats (training/rewards).',
+images: ['https://placehold.co/800x600/png?text=Treat+Pouch'],
+tags: ['dog', 'cat', 'accessory']
+},
 ];
-
-export const collections = ['Men', 'Women', 'Girls', 'Boys', 'Pets', 'Gift Sets', 'Extras'];
-export const allProductImageUrls = IMAGE_URLS;

@@ -1,6 +1,7 @@
 // app/blog/page.tsx
 import Link from 'next/link';
 import { Metadata } from 'next';
+import AdSlot from '@/components/AdSlot';
 
 export const metadata: Metadata = {
   title: 'Blog | Root & Hide Co.',
@@ -27,6 +28,11 @@ export default function BlogIndex() {
           </div>
         </div>
       </section>
+
+      {/* Ad slot below posts grid */}
+      {process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG_MAIN && (
+        <AdSlot slotId={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG_MAIN} />
+      )}
 
       {/* Optional inline link to the Live feed (kept, not in header) */}
       <div className="mt-10 p-4 rounded border">

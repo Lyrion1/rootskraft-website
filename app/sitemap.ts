@@ -7,8 +7,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticRoutes = [
-    '', 'blog', 'live/lifestyle', 'subscribe'
-  ].map(p => ({ url: `${base}/${p}`, lastModified: now }));
+    { url: base, lastModified: now },
+    { url: `${base}/blog`, lastModified: now },
+    { url: `${base}/live/lifestyle`, lastModified: now },
+    { url: `${base}/subscribe`, lastModified: now },
+  ];
 
   const categoryRoutes = Object.values(CATEGORIES).map(c => ({
     url: `${base}${c.path}`, lastModified: now

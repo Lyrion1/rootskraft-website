@@ -56,6 +56,8 @@ export default function CollectionPage({ params }: CollectionPageProps) {
   const collectionDescription = {
     Men: "The Ade, Oba, and Ifẹ́ collections. Rooted in power and designed for the modern patriarch. Masculine forms, enduring structure.",
     Women: "The Ngozi, Ezinne, and Chika designs. Embodying grace, strength, and celestial femininity. Soft curves, powerful presence.",
+    Girls: "The Ada and Chioma collections. Charming designs for young ladies with style and grace. Premium quality crafted for the next generation.",
+    Boys: "The Emeka and Chukwu collections. Durable and classic pieces for young gentlemen. Built to last and grow with them.",
     Pets: "The Odogwu and Temi series. Luxury and comfort for your most cherished companion. Unmatched quality for the rooted relationship.",
     'Gift Sets': "Curated bundles of RootHaus essentials, packaged in bespoke, luxury presentation boxes. The ultimate statement of quality.",
     Extras: "Accessories and unique pieces, including custom dog tags and small leather goods. Perfect additions to your RootHaus collection.",

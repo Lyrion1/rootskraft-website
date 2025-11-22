@@ -1,3 +1,4 @@
+'use client';
 // components/Core/Header.tsx
 import Link from 'next/link';
 import * as React from 'react';

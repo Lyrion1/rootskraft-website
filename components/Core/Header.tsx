@@ -39,7 +39,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex space-x-8 items-center">{" "}
+        <nav className="hidden lg:flex space-x-8 items-center">
           
           {/* COLLECTIONS DROPDOWN MENU */}
           <div 

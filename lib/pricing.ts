@@ -9,8 +9,8 @@ const FALLBACK_RATES: Record<string, number> = {
   ZAR: 0.018, NGN: 1
 };
 
-export function formatPrice(baseNgn: number) {
-  const c = cookies();
+export async function formatPrice(baseNgn: number) {
+  const c = await cookies();
   const currency = c.get('roothaus.currency')?.value ?? 'NGN';
   const mult = Number(c.get('roothaus.multiplier')?.value ?? '1');
   const rate = FALLBACK_RATES[currency] ?? 1;
@@ -18,7 +18,7 @@ export function formatPrice(baseNgn: number) {
   return new Intl.NumberFormat(undefined, { style: 'currency', currency }).format(value);
 }
 
-export function getMultiplier() {
-  const c = cookies();
+export async function getMultiplier() {
+  const c = await cookies();
   return Number(c.get('roothaus.multiplier')?.value ?? '1');
 }

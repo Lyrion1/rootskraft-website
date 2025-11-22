@@ -9,5 +9,5 @@ export async function GET(req: Request) {
     return new NextResponse('Invalid price', { status: 400 });
   }
   
-  return new NextResponse(formatPrice(base), { headers: { 'cache-control': 'no-store' } });
+  return new NextResponse(await formatPrice(base), { headers: { 'cache-control': 'no-store' } });
 }

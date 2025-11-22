@@ -1,14 +1,12 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from 'next/font/google';
 import { ThemeProvider } from "next-themes";
 import "@/styles/globals.css";
 import { Header } from "@/components/Core/Header";
 import { Footer } from "@/components/Core/Footer";
 
-// We use local font variables but still import from Google to ensure the correct files are bundled
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
+// Fonts are now loaded via @fontsource imports in globals.css
+// and mapped to CSS variables via Tailwind config
 
 export const metadata: Metadata = {
   title: "RootHaus Leather | Root & Hide Co. - Luxury Nigerian-Inspired Leather Goods",
@@ -29,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider
           attribute="class"

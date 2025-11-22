@@ -12,7 +12,7 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   return (
     <Card className="flex flex-col overflow-hidden transition-all duration-500 hover:shadow-xl dark:hover:shadow-secondary/50 border-border/50">
-      <Link href={`/products/${product.slug}`} className="block relative aspect-[4/3] overflow-hidden">
+      <Link href={`/shop/products/${product.slug}`} className="block relative aspect-[4/3] overflow-hidden">
         <Image
           src={product.imageUrl}
           alt={product.name}
@@ -33,7 +33,7 @@ export function ProductCard({ product }: ProductCardProps) {
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button asChild size="default" className="w-full tracking-widest">
-          <Link href={`/products/${product.slug}`}>View & Order</Link>
+          <Link href={`/shop/products/${product.slug}`}>View & Order</Link>
         </Button>
       </CardFooter>
     </Card>

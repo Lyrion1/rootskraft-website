@@ -1,11 +1,11 @@
 'use client';
 // components/Core/Header.tsx
 import Link from 'next/link';
+import Image from 'next/image';
 import * as React from 'react';
 import { ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from './ThemeToggle';
-import EmbossedLogo from '../Brand/EmbossedLogo';
 import { CATEGORIES } from '@/data/categories';
 import NavLink from '@/components/NavLink';
 import { PRIMARY_NAV } from '@/data/nav';
@@ -16,16 +16,30 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
-      <div className="container flex items-center justify-between h-20">
+      <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 py-3 md:py-4">
         
-        {/* Logo and Home Link */}
-        <Link href="/" className="flex items-center space-x-2 p-0">
-          <EmbossedLogo size="sm" className="p-2"/>
+        {/* Logo Patch in Top-Left */}
+        <Link href="/" className="flex items-center mr-4 sm:mr-6 md:mr-8">
+          <div 
+            className="rounded px-2 py-1.5 sm:px-3.5 sm:py-2 shadow-md"
+            style={{
+              backgroundColor: '#a6692c'
+            }}
+          >
+            <Image
+              src="https://res.cloudinary.com/dycotblov/image/upload/v1763859183/6DEFC432-FB86-41D4-912C-94ED93A737FF_dekn4z.png"
+              alt="RootHaus Leather logo"
+              width={100}
+              height={56}
+              className="h-10 sm:h-12 md:h-14 w-auto"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex space-x-4 items-center">
-          <ul className="flex items-center gap-x-4">
+        <nav className="hidden lg:flex items-center">
+          <ul className="flex items-center gap-6">
             {PRIMARY_NAV.map(item => (
               item.label === 'COLLECTIONS'
                 ? (

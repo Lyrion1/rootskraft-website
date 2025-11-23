@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'placehold.co',
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
     ],
     // Keep optimization enabled for production (disabled would bypass Next.js image optimization)
     unoptimized: false,

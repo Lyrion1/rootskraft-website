@@ -1,11 +1,11 @@
 'use client';
 // components/Core/Header.tsx
 import Link from 'next/link';
+import Image from 'next/image';
 import * as React from 'react';
 import { ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from './ThemeToggle';
-import EmbossedLogo from '../Brand/EmbossedLogo';
 import { CATEGORIES } from '@/data/categories';
 import NavLink from '@/components/NavLink';
 import { PRIMARY_NAV } from '@/data/nav';
@@ -16,16 +16,36 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
-      <div className="container flex items-center justify-between h-20">
+      <div className="flex items-center justify-between px-10 py-4">
         
-        {/* Logo and Home Link */}
-        <Link href="/" className="flex items-center space-x-2 p-0">
-          <EmbossedLogo size="sm" className="p-2"/>
+        {/* Logo Patch in Top-Left */}
+        <Link href="/" className="flex items-center mr-8">
+          <div 
+            className="rounded px-3.5 py-2 shadow-md"
+            style={{
+              backgroundColor: '#a6692c',
+              borderRadius: '4px',
+              padding: '8px 14px',
+              boxShadow: '0 2px 4px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.1)'
+            }}
+          >
+            <Image
+              src="https://res.cloudinary.com/dycotblov/image/upload/v1763859183/6DEFC432-FB86-41D4-912C-94ED93A737FF_dekn4z.png"
+              alt="RootHaus Leather logo"
+              width={100}
+              height={56}
+              style={{
+                height: '56px',
+                width: 'auto'
+              }}
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex space-x-4 items-center">
-          <ul className="flex items-center gap-x-4">
+        <nav className="hidden lg:flex items-center">
+          <ul className="flex items-center gap-6">
             {PRIMARY_NAV.map(item => (
               item.label === 'COLLECTIONS'
                 ? (

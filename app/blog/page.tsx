@@ -47,8 +47,7 @@ export default function BlogIndex() {
       <section id="subscribe" className="mt-10 p-6 rounded border">
         <h2 className="text-xl font-semibold mb-2">Subscribe for new posts & launches</h2>
         <p className="text-sm opacity-70 mb-4">No spam. Just the good stuff from Roothaus.</p>
-        <form name="subscribe" method="POST" data-netlify="true" action="/thank-you" className="flex gap-3 flex-col sm:flex-row">
-          <input type="hidden" name="form-name" value="subscribe" />
+        <form method="POST" className="flex gap-3 flex-col sm:flex-row">
           <input
             type="email" name="email" required placeholder="you@example.com"
             className="border rounded px-3 py-2 flex-1"

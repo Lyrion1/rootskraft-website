@@ -13,11 +13,17 @@ export const metadata: Metadata = {
   description: "RootHaus Leather: The finest luxury leather goods. Rooted in Nigerian heritage and celestial balance. Explore our bespoke belts, wallets, and handbags.",
   keywords: "RootHaus, Root & Hide Co, Luxury Leather, Nigerian Heritage, Bespoke Leather, Cognac Leather, Gold Hardware",
   metadataBase: new URL('https://rootskraft.com'),
+  icons: {
+    icon: 'https://res.cloudinary.com/dycotblov/image/upload/v1763858028/faviconn_o3o0pk.png',
+    shortcut: 'https://res.cloudinary.com/dycotblov/image/upload/v1763858028/faviconn_o3o0pk.png',
+    apple: 'https://res.cloudinary.com/dycotblov/image/upload/v1763858028/faviconn_o3o0pk.png',
+  },
   openGraph: {
     title: "RootHaus Leather",
     description: "Luxury Nigerian-Inspired Leather Goods",
     url: "https://rootskraft.com",
     siteName: "RootHaus Leather",
+    images: ['https://res.cloudinary.com/dycotblov/image/upload/v1763858028/faviconn_o3o0pk.png'],
   }
 };
 

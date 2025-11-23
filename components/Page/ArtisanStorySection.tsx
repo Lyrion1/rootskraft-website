@@ -10,7 +10,7 @@ export default function ArtisanStorySection() {
       {/* Image Placeholder */}
       <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-2xl dark:shadow-secondary/20">
         <Image
-          src="https://placehold.co/800x1000/3e2723/fff?text=Image+Artisan+Hand+Stitching"
+          src="https://res.cloudinary.com/dycotblov/image/upload/v1763859252/F7181C8D-75DC-4BAD-9BDA-260669315512_dyirsg.png"
           alt="Artisan at work, hand-stitching luxury leather"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"

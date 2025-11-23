@@ -1,42 +1,42 @@
 import { Metadata } from "next";
 
-// --- Image Placeholder URLs ---
-// All images are hyper-realistic leather mockups, using placehold.co as requested.
+// --- Image URLs - Cloudinary Assets ---
+// Production-ready Cloudinary image assets for RootHaus Leather
 const IMAGE_URLS = {
   // MEN
-  adeBelt: 'https://placehold.co/800x600/1e1e1e/ffffff?text=Ade+Belt+Black+Saffiano+Leather',
-  obaWallet: 'https://placehold.co/800x600/2f2f2f/ffffff?text=Oba+Wallet+Bifold+Crocodile+Embossed',
-  ajaniStrap: 'https://placehold.co/800x600/3c3c3c/ffffff?text=Ajani+Watch+Strap+Brown+Vegetable+Tanned',
-  ifeDoppKit: 'https://placehold.co/800x600/4a4a4a/ffffff?text=If%E1%BA%BD+Dopp+Kit+Travel+Bag+Vintage+Leather',
+  adeBelt: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859584/D538C981-A702-473D-83B1-AC76365880BD_myzfco.png', // belt_black_gold_buckle
+  obaWallet: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859528/D19BC356-99D0-4164-B33C-7E48B43DC4EA_2_xuemvt.png', // wallet_bifold_black
+  ajaniStrap: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859465/B90C6441-561D-4A13-A371-739A9A8690B8_ny7omx.png', // cardholder_brown_gold
+  ifeDoppKit: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859252/F7181C8D-75DC-4BAD-9BDA-260669315512_dyirsg.png', // dopp_kit_brown
 
   // WOMEN
-  ngoziHandbag: 'https://placehold.co/800x600/5e5e5e/ffffff?text=Ngozi+Luxury+Tote+Handbag+Taupe+Pebbled',
-  ezinneClutch: 'https://placehold.co/800x600/6f6f6f/ffffff?text=Ezinne+Evening+Clutch+Ostrich+Pattern',
-  chikaCrossbody: 'https://placehold.co/800x600/7c7c7c/ffffff?text=Chika+Crossbody+Saddle+Bag+Deep+Red',
+  ngoziHandbag: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859631/D76984C7-F9DE-48B4-8C74-773FB5B71805_hvampw.png', // tote_bag
+  ezinneClutch: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859398/30BDCE46-2EF8-4E83-8A1D-D37853BDF85D_uabjza.png', // women_crossbody_set
+  chikaCrossbody: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859398/30BDCE46-2EF8-4E83-8A1D-D37853BDF85D_uabjza.png', // women_crossbody_set
 
   // GIRLS
-  adaBackpack: 'https://placehold.co/800x600/ff69b4/ffffff?text=Ada+Mini+Backpack+Pink+Leather',
-  chiomaPurse: 'https://placehold.co/800x600/dda0dd/ffffff?text=Chioma+Crossbody+Purse+Purple',
+  adaBackpack: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859631/D76984C7-F9DE-48B4-8C74-773FB5B71805_hvampw.png', // tote_bag variant
+  chiomaPurse: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859398/30BDCE46-2EF8-4E83-8A1D-D37853BDF85D_uabjza.png', // women_crossbody_set
   
   // BOYS
-  emekaWallet: 'https://placehold.co/800x600/4169e1/ffffff?text=Emeka+Youth+Wallet+Blue+Leather',
-  chukwuBelt: 'https://placehold.co/800x600/228b22/ffffff?text=Chukwu+Junior+Belt+Forest+Green',
+  emekaWallet: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859528/D19BC356-99D0-4164-B33C-7E48B43DC4EA_2_xuemvt.png', // wallet_bifold_black
+  chukwuBelt: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859584/D538C981-A702-473D-83B1-AC76365880BD_myzfco.png', // belt_black_gold_buckle
 
   // PETS
-  odogwuCollar: 'https://placehold.co/800x600/8d8d8d/ffffff?text=Odogwu+Dog+Collar+with+Brass+Hardware',
-  temiHarness: 'https://placehold.co/800x600/9e9e9e/ffffff?text=Temi+Dog+Harness+Padded+for+Comfort',
-  bisiWalkSet: 'https://placehold.co/800x600/afafaf/ffffff?text=Bisi+Leash+and+Collar+Set+Tan+Leather',
-  ayoTwinningSet: 'https://placehold.co/800x600/bdbdbd/ffffff?text=Ayo+Human+and+Pet+Twinning+Set',
+  odogwuCollar: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859183/6DEFC432-FB86-41D4-912C-94ED93A737FF_dekn4z.png', // pet_collar_black_gold
+  temiHarness: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859183/6DEFC432-FB86-41D4-912C-94ED93A737FF_dekn4z.png', // pet_collar_black_gold
+  bisiWalkSet: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859183/6DEFC432-FB86-41D4-912C-94ED93A737FF_dekn4z.png', // pet_collar_black_gold
+  ayoTwinningSet: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859183/6DEFC432-FB86-41D4-912C-94ED93A737FF_dekn4z.png', // pet_collar_black_gold
 
   // EXTRAS/GIFT SETS
-  militaryTag: 'https://placehold.co/800x600/cfcfcf/ffffff?text=Military+Dog+Tag+Leather+Sheath+Custom',
-  gemstoneTag: 'https://placehold.co/800x600/dfdfdf/ffffff?text=Gemstone+Dog+Tag+with+Leather+Accent',
-  leahGiftSet: 'https://placehold.co/800x600/efefef/ffffff?text=Leah+Gift+Set+Wallet+and+Belt+Bundle',
-  embossedLogoSet: 'https://placehold.co/800x600/0a0a0a/ffffff?text=RootHaus+Embossed+Logo+Accessories+Kit',
+  militaryTag: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859139/5B7B7B98-08B6-4799-BE3B-81D6AC547B43_cobjeh.png', // keyholder_brown
+  gemstoneTag: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859139/5B7B7B98-08B6-4799-BE3B-81D6AC547B43_cobjeh.png', // keyholder_brown
+  leahGiftSet: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859229/AC63DAF7-C010-43EC-9893-25B08801FB56_zxbg35.png', // duffel_bag_black (gift packaging)
+  embossedLogoSet: 'https://res.cloudinary.com/dycotblov/image/upload/v1763859086/3C033763-A40C-4EEC-8492-7409BCE1E814_qsurdk.png', // logo_embossed_main
   
   // LOOKBOOK / HERO PLACEHOLDERS
-  lookbookImage: 'https://placehold.co/1200x800/1e1e1e/ffffff?text=Generated+Luxury+Leather+Lookbook',
-  heroImage: 'https://placehold.co/1920x800/24160b/fff?text=RootHaus+Leather+Hero+Craftsmanship'
+  lookbookImage: 'https://res.cloudinary.com/dycotblov/image/upload/v1763858399/A_pair_of_digital_photographs_showcases_a_luxuriou_opvylo.png', // minimal_logo_bag
+  heroImage: 'https://res.cloudinary.com/dycotblov/image/upload/v1763858338/A_digital_photograph_displays_two_black_leather_wa_njicrb.png' // wallet_double-angle
 };
 // ------------------------------------
 

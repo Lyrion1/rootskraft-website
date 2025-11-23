@@ -28,7 +28,7 @@ export default function ArtisanStoryPage() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
             <Image
-              src="https://placehold.co/800x600/1e1e1e/fff?text=AI+Image+Root+Symbol+Engraving"
+              src="https://placehold.co/800x600/1e1e1e/fff?text=Image+Root+Symbol+Engraving"
               alt="Root symbol engraved on leather"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -74,7 +74,7 @@ export default function ArtisanStoryPage() {
           </div>
           <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl order-1 md:order-2">
             <Image
-              src="https://placehold.co/800x600/3e2723/fff?text=AI+Image+Solid+Brass+Buckle+Detail"
+              src="https://placehold.co/800x600/3e2723/fff?text=Image+Solid+Brass+Buckle+Detail"
               alt="Close-up of solid brass buckle"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

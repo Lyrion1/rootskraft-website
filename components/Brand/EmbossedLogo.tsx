@@ -27,7 +27,7 @@ const EmbossedLogo: React.FC<EmbossedLogoProps> = ({ size = 'md', className = ''
         className
       )}
     >
-      {/* AI Placeholder for the Root Texture Background Overlay */}
+      {/* Placeholder for the Root Texture Background Overlay */}
       <Image
         src={allProductImageUrls.heroImage} // Using hero as a subtle root texture
         alt="RootHaus Brand Texture"

@@ -53,7 +53,7 @@ export default function ContactPage() {
           <h2 className="text-4xl font-serif font-bold text-center mb-8">Visit Us (Virtual Tour)</h2>
           <div className="relative aspect-[16/9] bg-muted rounded-xl">
              <p className='absolute inset-0 flex items-center justify-center text-xl text-muted-foreground'>
-                [AI Image Placeholder: Elegant Lagos Studio Interior]
+                [Image Placeholder: Elegant Lagos Studio Interior]
              </p>
           </div>
       </section>

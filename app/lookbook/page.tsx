@@ -7,7 +7,7 @@ import { Separator } from '@/components/ui/separator';
 
 export const metadata: Metadata = {
   title: 'Lookbook | RootHaus Leather Style Gallery',
-  description: 'View the latest RootHaus Leather Lookbook, showcasing our luxury belts, handbags, and accessories in high-fashion, AI-generated settings.',
+  description: 'View the latest RootHaus Leather Lookbook, showcasing our luxury belts, handbags, and accessories in high-fashion settings.',
 };
 
 const lookbookImages = [
@@ -49,7 +49,7 @@ export default function LookbookPage() {
       
       <div className="text-center pt-20">
         <p className="text-lg italic text-muted-foreground">
-          All images are high-fashion AI concepts and are subject to change.
+          All images are high-fashion concepts and are subject to change.
         </p>
       </div>
     </main>

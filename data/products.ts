@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-// --- AI Image Placeholder URLs ---
+// --- Image Placeholder URLs ---
 // All images are hyper-realistic leather mockups, using placehold.co as requested.
 const IMAGE_URLS = {
   // MEN
@@ -35,7 +35,7 @@ const IMAGE_URLS = {
   embossedLogoSet: 'https://placehold.co/800x600/0a0a0a/ffffff?text=RootHaus+Embossed+Logo+Accessories+Kit',
   
   // LOOKBOOK / HERO PLACEHOLDERS
-  lookbookImage: 'https://placehold.co/1200x800/1e1e1e/ffffff?text=AI+Generated+Luxury+Leather+Lookbook',
+  lookbookImage: 'https://placehold.co/1200x800/1e1e1e/ffffff?text=Generated+Luxury+Leather+Lookbook',
   heroImage: 'https://placehold.co/1920x800/24160b/fff?text=RootHaus+Leather+Hero+Craftsmanship'
 };
 // ------------------------------------

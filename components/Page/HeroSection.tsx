@@ -14,7 +14,7 @@ interface HeroSectionProps {
 export default function HeroSection({ title, subtitle, ctaText, ctaLink, imageUrl }: HeroSectionProps) {
   return (
     <section className="relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
-      {/* AI Image Background */}
+      {/* Image Background */}
       <Image
         src={imageUrl}
         alt="Luxury Leather Craftsmanship Hero"

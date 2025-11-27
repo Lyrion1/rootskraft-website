@@ -1,4 +1,4 @@
-import { products } from '@/data/products';
+import { products, ProductCategory } from '@/data/products';
 import { CATEGORIES } from '@/data/categories';
 import Link from 'next/link';
 import PriceClient from '@/components/PriceClient';
@@ -14,16 +14,8 @@ export default function CollectionPage({ params }: Params) {
   const categoryData = CATEGORIES[key];
   if (!categoryData) return (<div className="p-10">Category not found.</div>);
 
-  // Filter products based on category
-  let items;
-  if (key === 'accessories-homeware') {
-    // For accessories-homeware, show Extras and Gift Sets
-    items = products.filter(p => p.collection === 'Extras' || p.collection === 'Gift Sets');
-  } else {
-    // Map category to collection
-    const collection = categoryData.collection;
-    items = products.filter(p => p.collection === collection);
-  }
+  // Filter products by the category field which matches the URL slug
+  const items = products.filter(p => p.category === key as ProductCategory);
 
   return (
     <main className="mx-auto max-w-6xl p-6">
